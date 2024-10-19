@@ -17,12 +17,6 @@ class KalmanFilter:
 
         Inputs:
             y: current measurement
-            x_k_1: previous state estimate
-            P_k_1: previous error covariance
-        
-        Returns:
-            x_up: updated state estimate
-            P_up: updated error covariance
         """
 
         # Predict

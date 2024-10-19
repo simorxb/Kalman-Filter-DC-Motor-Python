@@ -30,6 +30,9 @@ def main():
     L = 0.35 / 1000     # Armature inductance (H)
     ke = 0.0191         # Back EMF constant (V*s/rad)
 
+    # Initialize DC_Motor with given parameters
+    dc = DCMotor(J, b, kt, ke, R, L, time_step)
+
     # Kalman Filter
 
     T = 0.01            # Sampling time (s)
@@ -48,9 +51,6 @@ def main():
 
     # Initialize Kalman Filter
     kf = KalmanFilter(F, H, Q, RR, x0, P0)
-
-    # Initialize DC_Motor with given parameters
-    dc = DCMotor(J, b, kt, ke, R, L, time_step)
 
     # Iterate through time steps
     for idx in range(0, length):
